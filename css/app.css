@@ -1,0 +1,136 @@
+html {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-image: url(../img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+  width: 64px;
+  height: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #999;
+  box-shadow: 0px 3px 6px #999;
+}
+
+#header {
+    font-family: 'Trade Winds', cursive;
+    text-align: center;
+    font-size: 48px;
+    margin: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.columns {
+  text-align: center;
+}
+
+.outer {
+  border: 1px solid #999;
+  box-shadow: 0px 3px 6px #999;
+}
+
+.healthbar {
+    width: 80%;
+    height: 40px;
+    background-color: #eee;
+    margin: auto;
+    transition: width 500ms;
+    line-height: 40px;
+}
+
+.controls, .log {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid #999;
+    box-shadow: 0px 3px 6px #999;
+}
+
+.turn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.log ul {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.log ul li {
+    margin: 5px;
+}
+
+.log ul .player-turn {
+    color: blue;
+    background-color: #e4e8ff;
+    box-shadow: 0px 1px 1px #999;
+}
+
+.log ul .dragon-turn {
+    color: red;
+    background-color: #ffaaaa;
+    box-shadow: 0px 1px 1px #999;
+}
+
+button {
+    font-size: 20px;
+    background-color: #eee;
+    padding: 12px;
+    box-shadow: 0 1px 1px black;
+    margin: 10px;
+}
+
+#start-game {
+    background-color: #aaffb0;
+}
+
+#start-game:hover {
+    background-color: #76ff7e;
+}
+
+#attack {
+    background-color: #ff7367;
+}
+
+#attack:hover {
+    background-color: #ff3f43;
+}
+
+#special-attack {
+    background-color: #ffaf4f;
+}
+
+#special-attack:hover {
+    background-color: #ff9a2b;
+}
+
+#heal {
+    background-color: #aaffb0;
+}
+
+#heal:hover {
+    background-color: #76ff7e;
+}
+
+#give-up {
+    background-color: #ffffff;
+}
+
+#give-up:hover {
+    background-color: #c7c7c7;
+}

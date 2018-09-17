@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Dragon Slayer</title>
+      <script src="https://npmcdn.com/vue/dist/vue.js"></script>
+      <link rel="stylesheet" href="css/foundation.min.css">
+      <link rel="stylesheet" href="css/app.css">
+      <link href="https://fonts.googleapis.com/css?family=Trade+Winds" rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+        DRAGON SLAYER
+    </div>
+    <div id="app">
+        <section class="row">
+            <div class="small-6 columns">
+                <img src="img/player.png" />
+                <h1 class="text-center">YOU</h1>
+                <div class="healthbar outer">
+                    <div
+                      class="healthbar text-center"
+                      style="background-color: green; margin: 0; color: white;"
+                      :style="{width: playerHealth + '%'}">
+                      {{ playerHealth }}
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 columns">
+              <img src="img/dragon.png" />
+                <h1 class="text-center">DRAGON</h1>
+                <div class="healthbar outer">
+                    <div
+                      class="healthbar text-center"
+                      style="background-color: green; margin: 0; color: white;"
+                      :style="{width: dragonHealth + '%'}">
+                      {{ dragonHealth }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section v-if="!gameIsRunning" class="row controls">
+            <div class="small-12 columns">
+                <button id="start-game" @click="startGame">START NEW GAME</button>
+            </div>
+        </section>
+        <section v-else class="row controls">
+            <div class="small-12 columns">
+                <button id="attack" @click="attack">ATTACK</button>
+                <button v-if="specialAttackCount>0" id="special-attack" @click="specialAttack">SPECIAL ATTACK ({{specialAttackCount}})</button>
+                <button v-if="healCount>0" id="heal" @click="heal">HEAL ({{healCount}})</button>
+                <button id="give-up" @click="giveUp">GIVE UP</button>
+            </div>
+        </section>
+        <section class="row log" v-if="turns.length > 0">
+            <div class="small-12 columns">
+                <ul>
+                    <li v-for="turn in turns"
+                      :class="{'player-turn': turn.isPlayer, 'dragon-turn': !turn.isPlayer}">
+                      {{ turn.text }}
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
